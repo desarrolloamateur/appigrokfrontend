@@ -1,7 +1,7 @@
 from groq import Groq
 import streamlit as st
 
-client = Groq(api_key="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")
+client = Groq(api_key="gsk_03kjs_ie@ldKs.jkoSf{56lsnzAApFslNalemPd#")
 
 # Función para obtener la respuesta de la IA
 def get_ai_response(messages):
