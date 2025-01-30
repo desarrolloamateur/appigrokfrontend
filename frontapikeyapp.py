@@ -29,7 +29,7 @@ def chat():
     # Formulario para enviar mensajes
     with st.form(key='chat_form', clear_on_submit=True):
         # Entrada de texto del usuario
-        user_input = st.text_input("Tu:", key="user_input")
+        user_input = st.text_input("Tu:", key="user_input", value="")
         submit_button = st.form_submit_button(label='Enviar')
 
         # Si se presiona el botón de enviar
@@ -45,9 +45,6 @@ def chat():
                 ai_response = get_ai_response(st.session_state['messages'])
                 # Agregar la respuesta de la IA
                 st.session_state['messages'].append({"role": "assistant", "content": ai_response})
-
-            # Limpiar el campo de entrada
-            st.session_state.user_input = ""
 
             # Mostrar toda la conversación
             for message in st.session_state['messages']:
